@@ -8,6 +8,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -41,6 +43,7 @@ public class AggregateService {
                     List<List<String>> timeSeriesList = splitList.split(assets.getTime(), aggregateDTO.getPeriod());
                     assets.setTime(timeSeriesList.stream()
                             .map(times -> times.get(aggregateDTO.getPeriod() - 1))
+                            .map(s -> OffsetDateTime.parse(s, DateTimeFormatter.ISO_OFFSET_DATE_TIME))
                             .collect(Collectors.toList()));
                 });
         return assetMetricsResponse;

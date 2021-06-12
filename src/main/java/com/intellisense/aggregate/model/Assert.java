@@ -2,6 +2,7 @@ package com.intellisense.aggregate.model;
 
 import lombok.Data;
 
+import java.time.OffsetDateTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -11,7 +12,7 @@ import java.util.Objects;
 
 public class Assert {
     private Map<String, List<Double>> metricIds;
-    private List<String> time;
+    private List<OffsetDateTime> time;
 
     public Assert(Map<String, List> metrics) {
         metrics.entrySet().forEach(
