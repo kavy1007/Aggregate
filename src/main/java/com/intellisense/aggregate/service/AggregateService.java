@@ -1,8 +1,5 @@
 package com.intellisense.aggregate.service;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.intellisense.aggregate.model.AggregateDTO;
 import com.intellisense.aggregate.model.AssetMetrics;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +8,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.io.File;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -52,20 +48,8 @@ public class AggregateService {
 
 
     private AssetMetrics getAssertMetrics() {
-//        Map s = restTemplate.getForEntity(dataURL, Map.class).getBody();
-//        return new AssetMetrics(s);
-        String outFile = "src/main/resources/SampleData.json";
-        ObjectMapper objectMapper = new ObjectMapper();
-        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        try {
-
-            Map<String, Map<String, List>> assetMetrics =
-                    objectMapper.readValue(new File(outFile), new TypeReference<Map<String, Map<String, List>>>() {
-                    });
-            return new AssetMetrics(assetMetrics);
-        } catch (Exception e) {
-            throw new RuntimeException();
-        }
+        Map assetMetrics = restTemplate.getForEntity(dataURL, Map.class).getBody();
+        return new AssetMetrics(assetMetrics);
     }
 
     @Bean
