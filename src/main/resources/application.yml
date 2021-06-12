@@ -1,0 +1,4 @@
+aggregate-api:
+  url: https://reference.intellisense.io/test.dataprovider
+  readTimeOut: 5000
+  connectTimeOut: 5000

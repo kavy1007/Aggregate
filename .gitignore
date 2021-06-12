@@ -1,0 +1,44 @@
+# Default ignored files
+/shelf/
+/.idea/workspace.xml
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+
+### VS Code ###
+.vscode/
+
+*.DS_Store
+
+### Sonnar scanner ###
+.scannerwork
+
+.flattened-pom.xml
+### local application properties file ignored
+application-local.yml
+secrets.yml
