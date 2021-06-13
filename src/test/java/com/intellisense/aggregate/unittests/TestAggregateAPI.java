@@ -41,7 +41,7 @@ public class TestAggregateAPI {
         headers.setContentType(MediaType.APPLICATION_JSON);
         HttpEntity httpEntity = new HttpEntity<>(aggregateDTO, headers);
         return restTemplate.exchange(
-                "http://localhost:" + randomServerPort + "/aggregate",
+                "http://localhost:" + randomServerPort + "/v1/aggregate",
                 HttpMethod.POST,
                 httpEntity,
                 AssetMetrics.class);

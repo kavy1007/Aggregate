@@ -12,7 +12,7 @@ public class AggregateAPI implements IAggregateAPI {
     private AggregateService aggregateService;
 
     @Override
-    public AssetMetrics getEmployeeById(AggregateDTO aggregateDTO) {
+    public AssetMetrics aggreagedMetrics(AggregateDTO aggregateDTO) {
         return aggregateService.getAggregates(aggregateDTO);
     }
 }

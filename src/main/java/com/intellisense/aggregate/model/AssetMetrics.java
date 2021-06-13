@@ -1,6 +1,7 @@
 package com.intellisense.aggregate.model;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.HashMap;
 import java.util.List;
@@ -8,6 +9,7 @@ import java.util.Map;
 import java.util.Objects;
 
 @Data
+@NoArgsConstructor
 public class AssetMetrics {
 
     public AssetMetrics(Map<String, Map<String, List>> assetId) {

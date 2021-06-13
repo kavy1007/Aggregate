@@ -1,6 +1,7 @@
 package com.intellisense.aggregate.model;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.OffsetDateTime;
 import java.util.HashMap;
@@ -9,7 +10,7 @@ import java.util.Map;
 import java.util.Objects;
 
 @Data
-
+@NoArgsConstructor
 public class Assert {
     private Map<String, List<Double>> metricIds;
     private List<OffsetDateTime> time;
